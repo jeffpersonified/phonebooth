@@ -3,7 +3,9 @@ window.Phonebooth =
   Collections: {}
   Views: {}
   Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
+  initialize: -> 
+    new Phonebooth.Routers.Photos()
+    Backbone.history.start()
 
 $(document).ready ->
   Phonebooth.initialize()
