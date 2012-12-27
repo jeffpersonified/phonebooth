@@ -1,0 +1,3 @@
+<h1>Phone booth!</h1>
+
+<%= @photos %>
