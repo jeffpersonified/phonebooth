@@ -6,18 +6,18 @@ class PhotosController < ApplicationController
   end
 
   def show
-    respond_with Entry.find(params[:id])
+    respond_with Photo.find(params[:id])
   end
   
   def create
-    respond_with Entry.create(params[:entry])
+    respond_with Photo.create(params[:photo])
   end
   
-  def update
-    respond_with Entry.update(params[:id], params[:entry])
-  end
+  # def update
+  #   respond_with Photo.update(params[:id], params[:photo])
+  # end
   
-  def destroy
-    respond_with Entry.destroy(params[:id])
-  end
+  # def destroy
+  #   respond_with Photo.destroy(params[:id])
+  # end
 end
