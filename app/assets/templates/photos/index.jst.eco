@@ -1,3 +1,7 @@
 <h1>Phone booth!</h1>
 
-<%= @photos %>
+<ul>
+<% for photo in @photos.models: %>
+  <li><%= photo.get('hashie') %></li>
+<% end %>
+</ul>
