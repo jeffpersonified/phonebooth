@@ -3,8 +3,12 @@ class Phonebooth.Routers.Photos extends Backbone.Router
     '': 'index'
     'photos/:id': 'show'
 
+  initialize: ->
+    @collection = new Phonebooth.Collections.Photos()
+    @collection.fetch()
+
   index: ->
-    view = new Phonebooth.Views.PhotosIndex()
+    view = new Phonebooth.Views.PhotosIndex(collection: @collection)
     $('#container').html(view.render().el)
 
   show: (id) ->
