@@ -1,7 +1,12 @@
-<h1>Phone booth!</h1>
+<h1>PhoneBooth</h1>
+
+<form id="new_search">
+  <input type="text" name="location" id="new_search_location">
+  <input type="submit" value="Search">
+</form>
 
 <ul>
 <% for photo in @photos.models: %>
-  <img src="<%= photo.attributes.images.low_resolution.url %>">
+  <img src="<%= photo.get('images').low_resolution.url %>">
 <% end %>
 </ul>
