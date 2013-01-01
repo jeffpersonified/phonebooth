@@ -8,7 +8,13 @@ class Phonebooth.Collections.Photos extends Backbone.Collection
   #   lng = -122.426716
   #   locationSearch(lat, lng)
 
-  url: "https://api.instagram.com/v1/locations/search?lat=37.76058&lng=-122.426716&client_id=811435c5b0e24276b778c61d5e3a2925&callback=?"
+  # url: function() {
+  #   return "https://api.instagram.com/v1/users/self/feed?access_token=" + this.access_token
+  # },
+
+  url: 'https://api.instagram.com/v1/media/search?lat=37.76058&lng=-122.426716&client_id=811435c5b0e24276b778c61d5e3a2925&callback=?'
+
+  # url: "https://api.instagram.com/v1/locations/search?lat=37.76058&lng=-122.426716&client_id=811435c5b0e24276b778c61d5e3a2925&callback=?"
 
   parse: (response) ->
     response.data

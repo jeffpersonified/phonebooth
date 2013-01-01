@@ -1,3 +1,7 @@
 <h1>Phone booth!</h1>
 
-<%= @photos.length %>
+<ul>
+<% for photo in @photos.models: %>
+  <img src="<%= photo.attributes.images.low_resolution.url %>">
+<% end %>
+</ul>

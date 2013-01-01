@@ -1,5 +1,5 @@
 class Phonebooth.Views.PhotosIndex extends Backbone.View
-  tagName: 'li'
+  tagName: 'div'
 
   template: JST['photos/index']
 
