@@ -1,5 +1,8 @@
 <h1>PhoneBooth</h1>
 
+<!-- for testing only -->
+<h3>Current coordinates: <%= @photos.latitude %>, <%= @photos.longitude %></h3>
+
 <form id="new_search">
   <input type="text" name="location" id="new_search_location">
   <input type="submit" value="Search">
@@ -10,4 +13,4 @@
   <img src="<%= photo.get('images').low_resolution.url %>">
 <% end %>
 </ul>
-<!-- loading icons go here -->
+<!-- todo: add load icons where necessary ->
