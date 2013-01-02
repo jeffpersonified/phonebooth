@@ -6,17 +6,19 @@ A new project.
 
 To Do
 ==========
-- 0) finish rails cast
-- 1) create variables for lat,lng,client_id
-- 2) get location from navigator
-2 1/2) fetch automatically (setInterval) and on change and fetch intelligently 
-3) create logic for search
-4) pagination
-5) geolocation error and rejection handling
+- ~~finish basic structure of app~~
+- ~~get location from navigator~~
+- ~~implement search~~
+- add 'em maps with 'em layers
+- pagination
+- geolocation error and rejection handling
     http://html5doctor.com/finding-your-position-with-geolocation/
-7) redo with nested models
-    http://stackoverflow.com/questions/5931898/persisting-loading-metadata-in-a-backbone-js-collection
+- setInterval config for autoupdating
+- give primacy to search locations near search origin
+- update with nested models:
  
-    http://documentcloud.github.com/backbone/#FAQ-nested
+  http://stackoverflow.com/questions/5931898/persisting-loading-metadata-in-a-backbone-js-collection
+ 
+  http://documentcloud.github.com/backbone/#FAQ-nested
 8) add progress bar
     http://tbranyen.com/post/how-to-indicate-backbone-fetch-progress
