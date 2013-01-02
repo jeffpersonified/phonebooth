@@ -17,15 +17,16 @@ class Phonebooth.Views.PhotosIndex extends Backbone.View
 
   newSearch: (event) ->
     event.preventDefault()
-    @collection.latitude = '42.955152'   # set?
-    @collection.longitude = '-85.548816' # set?
+    geocoder = new google.maps.Geocoder()
+    address = $('#new_search_content').val()
+    geocoder.geocode(
+      'address': address, 
+      (results, status) -> 
+        if status is google.maps.GeocoderStatus.OK
+          @collection.latitude = '42.955152'   # set?
+          @collection.longitude = '-85.548816' # set?
+          # @.model.createSearch(address, results)
+        else alert "Geocoding failed: " + status
+    )
     @collection.fetch()
 
-
-
-    
-    # latitude: '42.955152', longitude: '-85.548816'
-    # 42.955152,-85.548816 # 430 Village Springs Dr.
-    # @collection.create name: $('#new_entry_name').val()
-    # collection should have a location and newSearch 
-    # should reset that location and create a new collection
