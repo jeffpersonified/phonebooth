@@ -10,3 +10,4 @@
   <img src="<%= photo.get('images').low_resolution.url %>">
 <% end %>
 </ul>
+<!-- loading icons go here -->
