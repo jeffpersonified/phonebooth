@@ -8,6 +8,8 @@ class Phonebooth.Views.PhotosIndex extends Backbone.View
 
   initialize: ->
     @collection.on('reset', @render, this)
+    @collection.on('setLatitude', @render, this)
+    @collection.on('setLongitude', @render, this)
 
   render: ->
     $(@el).html(@template(photos: @collection))
@@ -15,14 +17,9 @@ class Phonebooth.Views.PhotosIndex extends Backbone.View
 
   newSearch: (event) ->
     event.preventDefault()
-    # collection.newSearch()
-    @collection = new Phonebooth.Collections.Photos()
     @collection.latitude = '42.955152'   # set?
     @collection.longitude = '-85.548816' # set?
     @collection.fetch()
-    view = new Phonebooth.Views.PhotosIndex(collection: @collection)
-    $('#container').html(view.render().el)
-
 
 
 
