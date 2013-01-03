@@ -8,29 +8,25 @@ class Phonebooth.Views.PhotosIndex extends Backbone.View
 
   initialize: ->
     @collection.on('reset', @render, this)
-    @collection.on('setLatitude', @render, this)
-    @collection.on('setLongitude', @render, this)
+    # @collection.on('setLatitude', @render, this)
+    # @collection.on('setLongitude', @render, this)
 
   render: ->
     $(@el).html(@template(photos: @collection))
+    # console.log @collection.latitude
+    latlng = new google.maps.LatLng(@collection.latitude, @collection.longitude)
+    # console.log latlng
+    options =
+      zoom: 15
+      center: latlng
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    console.log "--------------------"
+    console.log "zoom #{options.zoom}"
+    console.log "center #{options.center}"
+    this.map = new google.maps.Map(document.getElementById("map_canvas"), options)
     this
 
   newSearch: (event) ->
     event.preventDefault()
     address = $('#new_search_location').val()
     @collection.newSearch(address)
-
-  # renderMap: ->
-  #   console.log "made it into renderMap"
-  #   mapOptions = 
-  #     center: new google.maps.LatLng(@.latitude, @.longitude)
-  #     zoom: 8
-  #     mapTypeId: google.maps.MapTypeId.ROADMAP
-  #   console.log "made it past setting options"
-  #   console.log  document.getElementById("map_canvas")
-  #   map = 
-  #     new google.maps.Map(document.getElementById("map_canvas"), mapOptions)
-  #   # map()
-  #   console.log "made it past setting options"
-  #   console.log map
-

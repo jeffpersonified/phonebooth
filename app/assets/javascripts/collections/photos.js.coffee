@@ -24,7 +24,7 @@ class Phonebooth.Collections.Photos extends Backbone.Collection
 
   setLongitude: (position) =>
     @longitude = position.coords.longitude
-    @.fetch()
+    # @.fetch()
 
   # todo: refactor setCoords, Setlong, setLat into one function
   # that expects a clean parameter
@@ -33,7 +33,7 @@ class Phonebooth.Collections.Photos extends Backbone.Collection
     @latitude  = coords.Ya
     @longitude = coords.Za
     @.fetch() 
-  # todo: Bind events properly so model will sync properly
+  # todo: Bind events properly so model will sync
   # without hard coded fetches
 
   newSearch: (address) ->

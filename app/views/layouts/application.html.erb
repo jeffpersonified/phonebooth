@@ -4,26 +4,12 @@
   <title>Phonebooth</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-
-  <script type="text/javascript">
-    function initialize() {
-      var mapOptions = {
-        center: new google.maps.LatLng(-34.397, 150.644),
-        zoom: 8,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      };
-      var map = new google.maps.Map(document.getElementById("map_canvas"),
-          mapOptions);
-    }
-  </script>
-
   <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3GgLSp1BRnm3bghTgJSl-edzamfhyfjA&sensor=true">
   </script>
-
   <%= csrf_meta_tags %>
 </head>
-<body onload="initialize()">
+<body>
 
 <%= yield %>
 
