@@ -2,9 +2,6 @@
 
 <!-- for testing only -->
 <h3>Current coordinates: <%= @photos.latitude %>, <%= @photos.longitude %></h3>
-<div id="map_canvas" style="width:200px; height:200px"></div>
-
-
 
 <form id="new_search">
   <input type="text" name="location" id="new_search_location">
