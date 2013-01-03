@@ -7,6 +7,7 @@ class Phonebooth.Collections.Photos extends Backbone.Collection
     @longitude = '-122.426716'  # Dolores Park Lng
     @client_id = '811435c5b0e24276b778c61d5e3a2925'
 
+
   url: ->
     "https://api.instagram.com/v1/media/search?lat=#{@latitude}&lng=#{@longitude}&client_id=#{@client_id}&callback=?"
   # todo: reassess whether the above is the best endpoint to use
