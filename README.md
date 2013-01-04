@@ -9,7 +9,9 @@ To Do
 - ~~finish basic structure of app~~
 - ~~get location from navigator~~
 - ~~implement search~~
-- add 'em maps with 'em layers
+- add 'em maps with 'em layers  
+  for mobile: https://developers.google.com/maps/documentation/javascript/basics
+  styling: https://developers.google.com/maps/documentation/javascript/styling
 - pagination
 - geolocation error and rejection handling
     http://html5doctor.com/finding-your-position-with-geolocation/
