@@ -1,10 +1,13 @@
 Phonebooth::Application.routes.draw do
+# <<<<<<< HEAD
   
-  scope "api" do
-    resources :photos
-  end
+# =======
+# >>>>>>> insta
+#   scope "api" do
+#     resources :photos
+#   end
 
-  root to: "main#index"
+#   root to: "main#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

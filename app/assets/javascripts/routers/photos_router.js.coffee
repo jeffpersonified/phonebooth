@@ -13,3 +13,5 @@ class Phonebooth.Routers.Photos extends Backbone.Router
 
   show: (id) ->
     alert "Photo #{id}"
+  # todo: once backend configured, create url paths for photo 
+  # collections, better ux
