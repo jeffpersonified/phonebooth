@@ -1,17 +1,19 @@
-<h1>PhoneBooth</h1>
-
-<!-- for testing only -->
-<h3>Current coordinates: <%= @photos.latitude %>, <%= @photos.longitude %></h3>
-
 <form id="new_search">
   <input type="text" name="location" id="new_search_location">
-  <input type="submit" value="Search">
+  <input type="submit" value="Search" class="button" id="hide">
 </form>
 
-<ul>
-<% for photo in @photos.models: %>
-  <img src="<%= photo.get('images').low_resolution.url %>">
-<% end %>
-</ul>
+<div id="sidebar">
+  <div id="photos">
+    <% for photo in @photos.models: %>
+      <!-- <a href="#" class="photo"> -->
+        <img src="<%= photo.get('images').low_resolution.url %>" class="photo">
+      <!-- </a> -->
+    <% end %>
+    <h3>Current coordinates: <%= @photos.latitude %>, <%= @photos.longitude %></h3>
+    <!-- todo: add load icons where necessary -->
+  </div>
+</div>
 
-<!-- todo: add load icons where necessary ->
+
+
