@@ -8,28 +8,37 @@ class Phonebooth.Views.PhotosIndex extends Backbone.View
 
   initialize: ->
     @collection.on('reset', @render, this)
+    @collection.on('change', @render, this)
 
   render: ->
     $(@el).html(@template(photos: @collection))
-    console.log @collection.models[0]
+    # console.log @collection.models[0]
 
     latlng = new google.maps.LatLng(@collection.latitude, @collection.longitude)
-    console.log latlng
+    shiftLatLng = new google.maps.LatLng(
+      parseFloat(@collection.latitude) + 0.0007577, 
+      parseFloat(@collection.longitude) + 0.0136653)
+    console.log "old latlng #{latlng}"
+    console.log "changinh lat #{parseFloat(@collection.latitude) + 0.0007577}"
+    console.log "This is the new latlng #{shiftLatLng}"
 
     options =
       zoom: 15
-      center: new google.maps.LatLng(@collection.latitude + 0.0007577, @collection.longitude + 0.0136653)
+      # not working
+      # center: new google.maps.LatLng(@collection.latitude + 0.0007577, @collection.longitude + 0.0136653)
+      center: shiftLatLng
       mapTypeId: google.maps.MapTypeId.ROADMAP
-      # console.log center
-
-    this.map = new google.maps.Map(document.getElementById("map_canvas"), options)
+      # move tools
+    console.log(options.center)
+    @map = new google.maps.Map(document.getElementById("map_canvas"), options)
     
-    this.setMarkers = for photo in @collection.models
+    @setMarkers = for photo in @collection.models
       markerInfo = 
         position: new google.maps.LatLng(photo.get('location').latitude, photo.get('location').longitude)
-        map: this.map
+        map: @map
         title: "hello world"  # markerInfo.title || ''
         zIndex: 1             # needs to iterate
+        #set markers with better images
 
       marker = new google.maps.Marker markerInfo
     this

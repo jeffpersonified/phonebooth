@@ -4,7 +4,7 @@ window.Phonebooth =
   Views: {}
   Routers: {}
   initialize: -> 
-    new Phonebooth.Routers.Photos()
+    window.router = new Phonebooth.Routers.Photos()
     Backbone.history.start()
 
 $(document).ready ->
