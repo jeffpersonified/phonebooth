@@ -2,8 +2,8 @@ class Phonebooth.Views.PhotosIndex extends Backbone.View
   tagName: 'div'
 
   events:
-    'submit #new_search': 'newSearch'
-
+    'submit #new_search' : 'newSearch'
+    
   template: JST['photos/index']
 
   initialize: ->
@@ -11,13 +11,16 @@ class Phonebooth.Views.PhotosIndex extends Backbone.View
 
   render: ->
     $(@el).html(@template(photos: @collection))
+    console.log @collection.models[0]
 
     latlng = new google.maps.LatLng(@collection.latitude, @collection.longitude)
+    console.log latlng
 
     options =
-      zoom: 13
-      center: latlng
+      zoom: 15
+      center: new google.maps.LatLng(@collection.latitude + 0.0007577, @collection.longitude + 0.0136653)
       mapTypeId: google.maps.MapTypeId.ROADMAP
+      # console.log center
 
     this.map = new google.maps.Map(document.getElementById("map_canvas"), options)
     
@@ -31,8 +34,8 @@ class Phonebooth.Views.PhotosIndex extends Backbone.View
       marker = new google.maps.Marker markerInfo
     this
 
-
   newSearch: (event) ->
     event.preventDefault()
     address = $('#new_search_location').val()
     @collection.newSearch(address)
+

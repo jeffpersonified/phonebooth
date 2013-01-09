@@ -6,14 +6,26 @@
 <div id="sidebar">
   <div id="photos">
     <% for photo in @photos.models: %>
-      <!-- <a href="#" class="photo"> -->
+
+      <a href="#" class="modal" data-reveal-id="modal<%= photo.get('id') %>">
         <img src="<%= photo.get('images').low_resolution.url %>" class="photo">
-      <!-- </a> -->
+      </a>
     <% end %>
-    <h3>Current coordinates: <%= @photos.latitude %>, <%= @photos.longitude %></h3>
-    <!-- todo: add load icons where necessary -->
   </div>
 </div>
 
-
-
+<% for photo in @photos.models: %>
+  <div id="modal<%= photo.get('id') %>" class="reveal-modal large">
+    <a href="<%= photo.get('link') %>"%>
+      <img src="<%= photo.get('images').standard_resolution.url %>" class="modal-photo">
+    </a>
+    <a href="<%= photo.get('user').website %>"%>
+      <img src="<%= photo.get('user').profile_picture %>" class="modal-photo">
+    </a>
+    <p>Filter: <%= photo.get('filter') %></p>
+    <p>Full name: <%= photo.get('user').full_name %></p>
+    <p>Username: <%= photo.get('user').username %></p>
+    <p>Comments: <%= photo.get('comments').count %></p>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+<% end %>
