@@ -1,8 +1,6 @@
 Phonebooth
 ==========
-Get a different perspective – find the photos being take around you. 
-
-A new project.
+Get a different perspective – find the photos being take around you. Live @ [quiet-mountain-5328.herokuapp.com](http://quiet-mountain-5328.herokuapp.com/) *in progress*
 
 To Do
 ==========
