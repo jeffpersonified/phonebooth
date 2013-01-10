@@ -1,6 +1,8 @@
 Phonebooth
 ==========
-Get a different perspective – find the photos being take around you. Live @ [quiet-mountain-5328.herokuapp.com](http://quiet-mountain-5328.herokuapp.com/) *in progress*
+Find the photos being take around you. Phonebooth/Photobth is my first Backbone.js app with a Rails API, integrating both Google Maps and Instagram's API's.
+
+Live @ [www.photobth.com](http://www.photobth.com/) *in progress*
 
 To Do
 ==========
