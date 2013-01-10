@@ -6,7 +6,6 @@
 <div id="sidebar">
   <div id="photos">
     <% for photo in @photos.models: %>
-
       <a href="#" class="modal" data-reveal-id="modal<%= photo.get('id') %>">
         <img src="<%= photo.get('images').low_resolution.url %>" class="photo">
       </a>
